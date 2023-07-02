@@ -5,8 +5,8 @@ from functions import *
 class mirror:
     mirrorObjects = []
     def __init__(self, length, posX, posY):
-        self.image = pygame.image.load("E:/NitAgartala/mirror.png").convert_alpha()
-        self.rotatorImage = pygame.image.load("E:/NitAgartala/rotator.png").convert_alpha()
+        self.image = pygame.image.load("mirror.png").convert_alpha()
+        self.rotatorImage = pygame.image.load("rotator.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (length, blockHeight) )
         self.posX = posX
         self.posY = posY
@@ -27,7 +27,7 @@ class mirror:
         self.orient_center(angle)
         self.orientation = angle
     def orient_center(self, angle):
-        self.image = pygame.transform.scale(pygame.image.load("E:/NitAgartala/mirror.png"), (100, blockHeight))
+        self.image = pygame.transform.scale(pygame.image.load("mirror.png"), (100, blockHeight))
         self.image = pygame.transform.rotate(self.image, - angle - 90)
         self.rect = self.image.get_rect(center = (self.posX, self.posY))
     def collide(self, pointPosX, pointPosY):
@@ -55,7 +55,7 @@ class obstacle(mirror):
     def __init__(self, length, posX, posY):
         super().__init__(length, posX, posY)
         mirror.mirrorObjects.remove(self) # Could replace with pop to optimise.
-        self.image = pygame.image.load("E:/NitAgartala/obstacle.png")
+        self.image = pygame.image.load("obstacle.png")
         self.image = pygame.transform.scale(self.image, (length, blockHeight) )
         obstacle.obstacleObjects.append(self)
     def __del__(self):
@@ -109,7 +109,7 @@ class ray:
         
 class fireButtonCl:
     def __init__(self):
-        self.image = pygame.image.load("E:/NitAgartala/fireButton.png").convert_alpha()
+        self.image = pygame.image.load("fireButton.png").convert_alpha()
         self.rect = self.image.get_rect(center = (750, 750))
 
 fireButton = fireButtonCl()
@@ -138,7 +138,7 @@ class roundClicker:
 
 class mirrorMakerCl:
     def __init__(self):
-        self.image = pygame.image.load("E:/NitAgartala/mirror.png").convert_alpha()
+        self.image = pygame.image.load("mirror.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (100, blockHeight))
         self.rect = self.image.get_rect(center = (400, 20))
 

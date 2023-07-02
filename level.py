@@ -9,8 +9,6 @@ def makeHypothRay(drawSur, levelRay):
     val = 0
     while val not in [-1, 1]:
         val = levelRay.propogate(drawSur)
-    if levelRay.direction == origDir:
-        print("SAME")
     levelRay.direction = origDir
     levelRay.posX, levelRay.posY = origPosX, origPosY
     print(levelRay.mirrColliding)

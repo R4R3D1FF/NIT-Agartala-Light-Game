@@ -1,6 +1,6 @@
 import pygame
 
-image = pygame.image.load("E:/NitAgartala/winScreen.png")
+image = pygame.image.load("winScreen.png")
 def youWon(screen):
     print('inside')
     run = 1

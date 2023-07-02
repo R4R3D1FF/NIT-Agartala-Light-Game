@@ -31,7 +31,7 @@ if level(levelRay, backSur, drawSur, screen) == 1:
         x = 0
         for i in range(1000000):
             x += 1
-        victory.youWon()
+        victory.youWon(screen)
 
     else:
         print(0)
